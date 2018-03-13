@@ -13,7 +13,7 @@ app.controller('prospectoCtrl', function($scope, $rootScope, $mdDialog, mdDialog
 
     $scope.nuevoProspecto = function(prospecto){
 
-		// $analytics.eventTrack('prospecto', {  category: 'prospecto', label: topico.nombre });
+		
 
 
         // Prospecto.crearProspecto(prospecto).then(res => {

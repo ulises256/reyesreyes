@@ -28,6 +28,4 @@ app.controller('homeCtrl', function($scope, $transitions, $rootScope, $http, $md
 
     var ary = ['img/background.jpeg', 'img/background1.jpg', 'img/background2.jpg'];
 
-
-
 });

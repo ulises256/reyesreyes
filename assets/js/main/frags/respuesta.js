@@ -13,11 +13,10 @@ app.controller('respuestaCtrl', function($scope, $rootScope, $mdDialog, mdDialog
     }else{
 
         Topicos.obtenerConRespuesta(id).then(res => {
-            console.log(res)
 
             $scope.respuesta = res.data.respuesta;
-            console.log($scope.respuesta)
             $scope.$digest()
+
         })
 
     }

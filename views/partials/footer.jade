@@ -8,7 +8,7 @@
 		h3 Dirección y Teléfono
 		.telefono(layout="row")
 			md-icon call
-			h4 52 1 33 1554 6419
+			h4 36 88 80 78
 		.email(layout="row")
 			md-icon mail_outline
 			h4 German@reyesreyesabogados.com
@@ -19,15 +19,19 @@
 		h3 Contáctanos
 		form(ng-submit="nuevoContacto(contacto)" ng-hide="listo" layout-align="center center")
 			.md-padding(layout="column")
-				md-input-container(flex)
-					label Nombre
-					input(ng-model="contacto.nombre" style="color:white;" required)
+				div(layout="row")
+					md-input-container(flex)
+						label Nombre
+						input(ng-model="contacto.nombre" style="color:white;" required)
+					md-input-container(flex required)
+						label Apellido
+						input(ng-model="contacto.apellido" style="color:white;" required)
 				md-input-container(flex required)
-					label E-mail
-					input(ng-model="contacto.email" style="color:white;" required)
-				md-input-container(flex)
-					label Mensaje
-					textarea(ng-model="contacto.mensaje" md-maxlength="1000" rows="5" style="color:white;" required)
+					label Correo
+					input(ng-model="contacto.correo" style="color:white;" required)
+				md-input-container(flex required)
+					label Telefono
+					input(ng-model="contacto.telefono" style="color:white;" required)
 			md-button(type="submit" flex)
 				| Enviar
 		.mensaje(ng-show="listo" style="width: 350px")

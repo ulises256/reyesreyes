@@ -47,7 +47,10 @@ app.controller('mainCtrl', function ($scope, $state, $rootScope, $http, alertas,
 
     $scope.nuevoContacto = function(contacto){
 
-        Prospecto.crear(contacto).then(res => {
+        console.log(contacto)
+
+        Prospecto.crearProspecto(contacto).then(res => {
+            $analytics.eventTrack('prospecto', {  category: 'prospecto', label: 'footer' });
             $scope.listo = true;
         })
 

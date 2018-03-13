@@ -33,7 +33,8 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
             controller: function($scope, $mdDialog, alertas, $state, Prospecto) {
 
                 $scope.nuevoProspecto = function(prospecto) {
-                    Prospecto.crear(prospecto).then(res => {
+                    Prospecto.crearProspecto(prospecto).then(res => {
+                        $analytics.eventTrack('prospecto', {  category: 'prospecto', label: 'consulta' });
                         $mdDialog.hide(res.data);
                         $scope.$digest();
                     })
@@ -113,13 +114,12 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
             : ($scope.peticion)
 
         Topicos.filtro(x).then(res => {
-            console.log(res.data)
+
             self.topicos = res.data.map((n, key) => new Pregunta(n, key))
 
             const blaaa = new TimelineMax()
 
             res.data.forEach((n , k) => {
-                console.log(k)
                 blaaa.from($('.clase' + k), 10, { x: '1000%', ease: Power2.easeIN})
             })
 
@@ -130,9 +130,7 @@ app.controller('consultaCtrl', function($scope, $window, $rootScope, $analytics,
             //     })
             // });
 
-            $scope.$digest();
-
-        })
+        }).then(() => $scope.$digest())
     }
 
     $scope.paging = {

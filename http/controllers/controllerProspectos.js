@@ -1,8 +1,8 @@
 var db = require('../relations');
 var ex = module.exports = {};
 
-//const Hubspot = require('hubspot');
-//const hubspot = new Hubspot({apiKey: '02e286e7-5252-4622-b30a-9dafd82a990b'});
+const Hubspot = require('hubspot');
+const hubspot = new Hubspot({apiKey: '02e286e7-5252-4622-b30a-9dafd82a990b'});
 
 var prospectos = db.prospectos;
 
